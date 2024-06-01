@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Eventmanagementsystem</title>
+    <link rel="stylesheet" href="/css/stylesTags.css">
+    <link rel="stylesheet" href="/css/stylesClasses.css">
+    <link rel="stylesheet" href="/css/stylesIDs.css">
+    <link rel="stylesheet" href="/css/stylesMisc.css">
+</head>
+
+<body onload="start()">
+<h1>Passau Events
+     <img src="/pictures/passau.jpg" alt="Passau">
+</h1>
+
+<div id="eventCreator">
+    <form id="eventCreatorForm" action="/" method="post">
+        Titel <input id="inputTitle" name="title" type="text" placeholder="Party XYZ">
+        Autor <input id="inputAuthor" name="author" type="text" placeholder="DJ Bob">
+        Beschreibung <input id="inputDesc" name="desc" type="text" placeholder="Das ist eine Party">
+        Wo? <input id="inputLocation" name="loc" type="text" placeholder="Irgendwo in Passau">
+        Wann? <input id="inputDate" name="date" type="date" min="" required>
+        Kategorie
+        <div class="container">
+            <div class="dropdown">
+                <select id="eventSelect" name="category">
+                    <option value="SPORT">Sport</option>
+                    <option value="MUSIK">Musik</option>
+                    <option value="KUNST">Kunst</option>
+                </select>
+            </div>
+        </div>
+
+        <input id="submitButton" type="submit" value="Neues Event erstellen" onclick="addEvent(event)" required>
+
+        <br><br><br><br><br>
+        <footer>
+            <p class="footer-text"> Eventmanagementsystem. All rights reserved. &copy</p>
+        </footer>
+    </form>
+</div>
+
+<div>
+    <div id="filter">
+        <label for="eventType">Filtern nach Typ:</label>
+        <select id="eventType">
+            <option value="all">Alle</option>
+            <option value="Sport">Sport</option>
+            <option value="Musik">Musik</option>
+            <option value="Kunst">Kunst</option>
+        </select>
+        <button onclick="">Filtern</button>
+    </div>
+
+    <table id="table">
+        <tr>
+            <th class="firstRow">Titel</th>
+            <th class="firstRow">Wann?</th>
+            <th class="firstRow">Beschreibung</th>
+            <th class="firstRow">Wetter</th>
+            <th class="firstRow">Bewertung</th>
+            <th class="firstRow">Interesse</th>
+        </tr>
+        <tr th:each="event : ${events}">
+            <td><a href="#" onclick="openPopup(this)" th:text="${event.title}"></a></td>
+            <td th:text="${event.date}"></td>
+            <td th:text="${event.description}"></td>
+            <td><section class="weather">[Fehlende Wetterinformationen]</section></td>
+            <td>
+                <section class="stars" display="flex">
+                    <p th:text="${event.rating}"></p>
+                    <img class="star" src="/pictures/EmptyStar.png" onmouseover="fillStars(this)" onmouseout="emptyStars(this)" onclick="rate(this)">
+                    <img class="star" src="/pictures/EmptyStar.png" onmouseover="fillStars(this)" onmouseout="emptyStars(this)" onclick="rate(this)">
+                    <img class="star" src="/pictures/EmptyStar.png" onmouseover="fillStars(this)" onmouseout="emptyStars(this)" onclick="rate(this)">
+                    <img class="star" src="/pictures/EmptyStar.png" onmouseover="fillStars(this)" onmouseout="emptyStars(this)" onclick="rate(this)">
+                    <img class="star" src="/pictures/EmptyStar.png" onmouseover="fillStars(this)" onmouseout="emptyStars(this)" onclick="rate(this)">
+                </section>
+            </td>
+            <td>
+                <section class="interest">
+                    <p class="likeCounter" th:text="${event.likes}"></p>
+                    <img class="likeImg" title="Interesse" src="/pictures/icon-like.png" onclick="toggleLike(this, true)">
+                    <img class="cancelLike" src="/pictures/RedCross.png" onclick="toggleLike(this, false)">
+                </section>
+            </td>
+        </tr>
+
+    </table>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>

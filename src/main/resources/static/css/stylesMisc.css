@@ -1,0 +1,6 @@
+/* Styles for hiding footer on mobile */
+@media only screen and (max-width: 768px) {
+  footer {
+      display: none;
+  }
+}

@@ -1,0 +1,44 @@
+##########################
+#   Öffnen der Website   #
+##########################
+
+1) Führe die SpringBootApplication aus und warte bis die Applikation gestartet ist
+
+2) Öffne "localhost:8080"
+
+
+
+#####################
+#   JSON-Zugriffe   #
+#####################
+
+- Die gesamte Eventliste mit Top-3-Sortierung wie auf Website:
+  "localhost:8080/api/events"
+
+- Die letzten x Events:
+  "localhost:8080/api/events?n=x"
+
+  Bspw. die letzten 20 Events: "localhost:8080/api/events?n=20"
+
+
+
+######################
+#   Besonderheiten   #
+######################
+
+Die Websitestruktur ist im Grunde sehr simpel.
+Durch den Event-Creator kann man Events hinzufügen. Weitere Details zu diesen
+sind auch als Pop-Up ansehbar, indem man auf sie klickt.
+Ebenso werden die drei Events mit den meisten Likes an oberster Stelle grün markiert.
+
+Die Datenbank wird mithilfe von eventService.createStartingValues() mit
+drei beispielhaften Events initialisiert. Auf Wunsch kann man diesen
+Methodenaufruf in der main-Methode einfach auskommentieren, falls man
+mit einer leeren Tabelle starten will.
+
+Es war eine große Herausforderung, alle Features sauber umzusetzen, weshalb
+einige Funktionen leider unvollständig sind, beispielsweise die Darstellung von
+Wetter, das Refactoring entsprechender Spalten in das Pop-Up sowie die
+Datenbankanbindung der Bewertungs- und Interessefunktion.
+Die geplante Funktionsweise des Wetters ist bei Interesse in der
+entsprechenden JavaScript-Methode einlesbar.

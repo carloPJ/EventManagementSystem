@@ -1,0 +1,139 @@
+#table {
+  margin-left: 20px;
+  width: calc(50% - 220px);
+  border-collapse: collapse;
+  float: right;
+  font-family: Arial;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Add hover effect to table rows */
+#table tr:hover {
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+#eventCreator {
+  display: flex;
+  gap: 15px;
+  max-width: 350px;
+  margin: 0 auto;
+  float: left;
+  margin-bottom: 20px;
+  font-family:Arial;
+}
+
+#eventCreator input[type="text"],
+#eventCreator input[type="date"],
+#eventCreator input[type="button"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#eventCreator input[type="button"] {
+  background-color: slateblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top:5px;
+}
+
+#eventCreator input[type="button"]:hover {
+  background-color: #45a049;
+}
+
+#submitButton {
+  margin-top: 15px;
+}
+
+/* Optional: Add additional styling for the form container if needed */
+#formContainer {
+  margin-bottom: 20px;
+  font-family: Arial;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+#addButton {
+  margin-top: 3px;
+}
+
+#table {
+  margin-left: 20px;
+  width: calc(100% - 420px);
+  border-collapse: collapse;
+  float: right;
+  font-family:Arial;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#table .firstRow {
+    background-color:plum;
+    font-size:18px;
+}
+
+#table th,
+#table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size:14px;
+}
+
+#table th {
+  font-weight: bold;
+  text-align: left;
+}
+
+#table td {
+  text-align: left;
+}
+
+#likeCounter {
+    font-family: Arial;
+    font-size: 10px;
+}
+#dislikeCounter {
+    font-family: Arial;
+    font-size: 10px;
+}
+#filter {
+  display: inline-block;
+  flex-direction: row-reverse;
+  margin-left: 70px;
+  margin-bottom: 10px;
+}
+
+#filter label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: black;
+  padding-left: 5px;
+  display: block;
+}
+
+#filter select {
+  margin-bottom: 10px;
+  padding-left: 5px;
+  width: 300px;
+  align-items: right;
+  background-color: white;
+}
+
+#filter button {
+  background-color: slateblue;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  padding-left: 5px;
+  width: 80px;
+  right: 10%
+}
